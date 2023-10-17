@@ -1,2 +1,16 @@
-<h1>Room#show</h1>
-<p>Find me in app/views/room/show.html.erb</p>
+<div class="container mt-5">
+  <h1>Scrum Estimate Room</h1>
+  <div class="mt-4">
+    <h4>Users:</h4>
+    <ul class="list-group">
+      <% @users.each do |user| %>
+        <li class="list-group-item">
+          <%= user[:name] %> - <%= user[:card] %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="mt-4">
+    <%= link_to "Reset", room_reset_path, method: :post, class: "btn btn-danger" %>
+  </div>
+</div>
